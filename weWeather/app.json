@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/search/search",
+    "pages/weather_list/weather_list",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#64b3e1",
+    "navigationBarTitleText": "微询天气",
+    "navigationBarTextStyle":"black"
+  }
+}

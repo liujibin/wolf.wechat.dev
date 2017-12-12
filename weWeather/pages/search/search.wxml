@@ -1,0 +1,92 @@
+<view class="main_view">
+  <view class="main_lay">
+    <view class="location_lay" bindtap='changeCity'>
+      <image src='../../images/location.png' class='location'></image>
+      <text class='head_title'>{{showCity}}</text>
+    </view>
+    
+    <view class='tody_lay'>
+      <text class="tmp_text">{{tmp}}°</text>
+      <text>{{condTxt}}</text>
+    </view>
+    <view class='tody_lay'>
+      <text>{{windDir}}</text>
+      <text>{{windSpd}}级</text>
+      <text> 湿度{{hum}}%</text>
+    </view>
+    <view class='tody_lay'>
+      <text>空气质量：{{qlty}}</text>
+    </view>
+    <view class='tody_lay'>
+      <text>  PM2.5：{{pm25}}</text>
+    </view>
+    <view style='margin-top:10px; font-size: 12px; color: #fff'><text>未来7天</text></view>
+    <scroll-view class="scroll_view" scroll-x="true">
+      <view class='data_view' wx:for="{{dailyForecast}}" wx:key="key" >
+        <view class="data_view_item" style='margin-top:10px; font-size: 15px; color: #fff'><text>{{item.date}}</text></view>
+        <view class='data_view_item' style='margin-top:10px; font-size: 15px; color: #fff'><text>{{item.cond.txt_d}}</text></view>
+        <view class='data_view_item' style='margin-top:10px; font-size: 15px; color: #fff'><text>{{item.tmp.max}}°/{{item.tmp.min}}°</text></view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="suggestion_lay">
+    <scroll-view scroll-y="true" style="height:{{second_height}}px">
+      <text>生活指数</text>
+      <!--舒适度-->
+      <view class="item_view">
+        <view><text class='title_txt'>舒适度:{{suggestionComf.brf}}</text></view>
+        <view class='title_content_view'>
+          <text class='title_content'>{{suggestionComf.txt}}</text>
+        </view>
+      </view>
+
+      <!--洗车-->
+      <view class="item_view">
+        <view><text class='title_txt'>洗车:{{suggestionCw.brf}}</text></view>
+        <view class='title_content_view'>
+          <text class='title_content'>{{suggestionCw.txt}}</text>
+        </view>
+      </view>
+
+      <!--穿衣-->
+      <view class="item_view">
+        <view><text class='title_txt'>穿衣:{{suggestionDrsg.brf}}</text></view>
+        <view class='title_content_view'>
+          <text class='title_content'>{{suggestionDrsg.txt}}</text>
+        </view>
+      </view>
+
+      <!--感冒-->
+      <view class="item_view">
+        <view><text class='title_txt'>感冒:{{suggestionFlu.brf}}</text></view>
+        <view class='title_content_view'>
+          <text class='title_content'>{{suggestionFlu.txt}}</text>
+        </view>
+      </view>
+
+      <!--运动-->
+      <view class="item_view">
+        <view><text class='title_txt'>运动:{{suggestionSport.brf}}</text></view>
+        <view class='title_content_view'>
+          <text class='title_content'>{{suggestionSport.txt}}</text>
+        </view>
+      </view>
+
+      <!--旅游-->
+      <view class="item_view">
+        <view><text class='title_txt'>旅游:{{suggestionTrav.brf}}</text></view>
+        <view class='title_content_view'>
+          <text class='title_content'>{{suggestionTrav.txt}}</text>
+        </view>
+      </view>
+
+      <!--紫外线-->
+      <view class="item_view">
+        <view><text class='title_txt'>紫外线:{{suggestionUv.brf}}</text></view>
+        <view class='title_content_view'>
+          <text class='title_content'>{{suggestionUv.txt}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
